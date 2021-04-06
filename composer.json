@@ -1,0 +1,37 @@
+{
+    "name": "theanh/tad-frontend",
+    "description": "",
+    "keywords": [],
+    "license": "MIT",
+    "authors": [
+        {
+          "name": "The Anh Dang",
+          "email": "dangtheanh16@gmail.com",
+          "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "support@example.org",
+        "docs": "https://example.org/composer"
+    },
+    "require": {
+        "php": ">=7.2",
+        "theanh/tad-system": "dev-master"
+    },
+    "require-dev": {
+      "laravel/laravel": "^6.0 | ^7.0 | ^8.0",
+      "phpunit/phpunit": "6.0 | 7.0 | 7.5 | 8.4 | ^8.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tadcms\\Frontend\\": "src/"
+        }
+    },
+    "extra": {
+      "laravel": {
+        "providers": [
+          "Tadcms\\Frontend\\FrontendServiceProvider"
+        ]
+      }
+    }
+}

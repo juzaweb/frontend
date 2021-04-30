@@ -8,7 +8,7 @@ class HomeController extends FrontendController
 {
     public function index()
     {
-        do_action('home_page');
+        do_action('frontend.home.index');
         
         return view('pages.home');
     }

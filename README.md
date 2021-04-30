@@ -5,10 +5,10 @@ TAD CMS is a web application cms with expressive, elegant syntax. We believe dev
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
 ## Documents
-- [Install](https://github.com/theanhk/tadcms/blob/master/docs/install.md)
-- [Configs](https://github.com/theanhk/tadcms/blob/master/docs/configs.md)
-- [Plugins](https://github.com/theanhk/tadcms/blob/master/docs/plugins.md)
-- [Themes](https://github.com/theanhk/tadcms/blob/master/docs/themes.md)
+- [Install](https://github.com/tadcms/tadcms/blob/master/docs/install.md)
+- [Configs](https://github.com/tadcms/tadcms/blob/master/docs/configs.md)
+- [Plugins](https://github.com/tadcms/tadcms/blob/master/docs/plugins.md)
+- [Themes](https://github.com/tadcms/tadcms/blob/master/docs/themes.md)
 
 ## Backend Javascript libraries
 - Jquery

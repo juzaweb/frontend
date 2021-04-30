@@ -2,8 +2,8 @@
 
 namespace Tadcms\Frontend;
 
-use Theanh\Lararepo\Controller;
-use Theanh\MultiTheme\Facades\Theme;
+use Tadcms\Lararepo\Controller;
+use Tadcms\MultiTheme\Facades\Theme;
 
 class FrontendController extends Controller
 {

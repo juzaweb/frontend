@@ -122,7 +122,7 @@ class Theme implements ThemeContract
     public function getThemeInfo($themeName)
     {
         $themePath = $this->basePath . '/' . $themeName;
-        $configPath = $themePath . '/theme.json';
+        $configPath = $themePath . '/config.json';
         
         if (file_exists($configPath)) {
             $theme = Config::load($configPath);

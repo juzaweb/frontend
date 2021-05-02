@@ -26,7 +26,7 @@ class ThemeServiceProvider extends ServiceProvider
         /*if (!File::exists(public_path('Themes')) && !File::exists(config('theme.symlink_path')) && config('theme.symlink') && File::exists(config('theme.theme_path'))) {
             App::make('files')->link(config('theme.theme_path'), config('theme.symlink_path', public_path('Themes')));
         }*/
-       
+        $this->loadViewsFrom(__DIR__ . '/../../views', 'frontend');
     }
 
     /**

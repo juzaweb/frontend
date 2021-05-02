@@ -121,7 +121,7 @@ class ThemeGeneratorCommand extends Command
             'lang'   => 'lang/en/content.php',
         ];
         
-        $themeStubFiles['theme'] = 'theme.json';
+        $themeStubFiles['theme'] = 'config.json';
         $themeStubFiles['changelog'] = 'changelog.yml';
 
         $this->makeDir($createdThemePath);

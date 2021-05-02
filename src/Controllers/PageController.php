@@ -9,7 +9,7 @@ class PageController extends FrontendController
 {
     public function index($slug, Request $request)
     {
-        $permalinks = $this->getPermalinks();
+        $permalinks = $this->getPermalinks();dd($permalinks);
         $base = explode('/', $slug)[0];
         $slug = str_replace($base, '', $slug);
 

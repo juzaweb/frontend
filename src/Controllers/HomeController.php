@@ -2,7 +2,6 @@
 
 namespace Tadcms\Frontend\Controllers;
 
-use Tadcms\Frontend\FrontendController;
 
 class HomeController extends FrontendController
 {

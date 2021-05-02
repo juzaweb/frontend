@@ -2,11 +2,12 @@
 
 namespace Tadcms\Frontend\Controllers;
 
-use Tadcms\Frontend\FrontendController;
+use Illuminate\Http\Request;
+use Tadcms\System\Controllers\Controller;
 
-class SearchController extends FrontendController
+class SearchController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         return view('pages.search');
     }

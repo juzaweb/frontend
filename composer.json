@@ -17,6 +17,9 @@
     },
     "require": {
         "php": ">=7.2",
+        "hassankhan/config": "^2.1",
+        "symfony/yaml": "^5.2",
+        "tadcms/hooks": "1.0.*",
         "tadcms/system": "1.0.*"
     },
     "require-dev": {
@@ -31,7 +34,7 @@
     "extra": {
       "laravel": {
         "providers": [
-          "Tadcms\\Frontend\\FrontendServiceProvider"
+          "Tadcms\\Frontend\\Providers\\FrontendServiceProvider"
         ]
       }
     }

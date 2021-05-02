@@ -1,9 +1,9 @@
 <?php
 
-namespace Tadcms\Frontend;
+namespace Tadcms\Frontend\Controllers;
 
-use Tadcms\Lararepo\Controller;
-use Tadcms\MultiTheme\Facades\Theme;
+use Tadcms\System\Controllers\Controller;
+use Tadcms\Frontend\Facades\Theme;
 
 class FrontendController extends Controller
 {
@@ -14,13 +14,14 @@ class FrontendController extends Controller
          * Add action to this hook add_action('frontend.call_action', $callback)
          * */
         do_action('frontend.call_action', $method, $parameters);
-        
+
         Theme::set($this->getCurrentTheme());
-        
+
         return parent::callAction($method, $parameters);
     }
-    
-    protected function getCurrentTheme() {
-        return apply_filters('frontend.get_theme', get_config('activated_theme', 'default'));
+
+    protected function getCurrentTheme()
+    {
+        return get_config('activated_theme', 'default');
     }
 }

@@ -2,12 +2,12 @@
 
 namespace Tadcms\Frontend\Controllers\Auth;
 
-use Tadcms\Frontend\FrontendController;
+use Tadcms\Frontend\Controllers\FrontendController;
 
 class RegisterController extends FrontendController
 {
     public function index()
     {
-        return view('pages.auth.register');
+        return view('auth.register');
     }
 }

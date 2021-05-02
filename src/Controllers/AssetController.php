@@ -2,7 +2,7 @@
 
 namespace Tadcms\Frontend\Controllers;
 
-use Tadcms\Lararepo\Controller;
+use Tadcms\System;
 use Illuminate\Support\Facades\Response;
 
 class AssetController extends Controller

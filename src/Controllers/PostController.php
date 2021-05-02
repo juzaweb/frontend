@@ -2,8 +2,6 @@
 
 namespace Tadcms\Frontend\Controllers;
 
-use Tadcms\Frontend\FrontendController;
-
 class PostController extends FrontendController
 {
     public function index()

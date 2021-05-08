@@ -37,4 +37,11 @@ class FrontendController extends Controller
             $this->layout = View::make($this->layout);
         }
     }
+
+    protected function view(string $view)
+    {
+        $this->setupLayout();
+        $this->layout->content = View::make($view);
+        return $this->layout;
+    }
 }

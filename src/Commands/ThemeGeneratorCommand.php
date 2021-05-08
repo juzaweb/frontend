@@ -74,6 +74,7 @@ class ThemeGeneratorCommand extends Command
      * Execute the console command.
      *
      * @return void
+     * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
      */
     public function handle()
     {
@@ -87,6 +88,7 @@ class ThemeGeneratorCommand extends Command
      * Theme Initialize.
      *
      * @return void
+     * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
      */
     protected function init()
     {
@@ -165,8 +167,9 @@ class ThemeGeneratorCommand extends Command
     /**
      * Create theme stubs.
      *
-     * @param array  $themeStubFiles
+     * @param array $themeStubFiles
      * @param string $createdThemePath
+     * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
      */
     public function createStubs($themeStubFiles, $createdThemePath)
     {
@@ -207,6 +210,7 @@ class ThemeGeneratorCommand extends Command
      * @param string $storePath
      *
      * @return void
+     * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
      */
     protected function makeFile($file, $storePath)
     {

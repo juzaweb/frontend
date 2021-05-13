@@ -5,7 +5,6 @@ namespace Tadcms\Frontend\Commands;
 use Illuminate\Config\Repository;
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem as File;
-use Illuminate\Support\Str;
 
 class ThemeGeneratorCommand extends Command
 {
@@ -64,9 +63,7 @@ class ThemeGeneratorCommand extends Command
     public function __construct(Repository $config, File $files)
     {
         $this->config = $config;
-
         $this->files = $files;
-
         parent::__construct();
     }
 
@@ -78,9 +75,8 @@ class ThemeGeneratorCommand extends Command
      */
     public function handle()
     {
-        $this->themePath = base_path('themes');
+        $this->themePath = $this->config->get('frontend.theme.path');
         $this->theme['name'] = strtolower($this->argument('name'));
-
         $this->init();
     }
 
@@ -92,10 +88,10 @@ class ThemeGeneratorCommand extends Command
      */
     protected function init()
     {
-        $createdThemePath = $this->themePath.'/'.$this->theme['name'];
+        $createdThemePath = $this->themePath . '/' .$this->theme['name'];
 
         if ($this->files->isDirectory($createdThemePath)) {
-            $this->error('Sorry, '.ucfirst($this->theme['name']).' Theme Folder Already Exist !!!');
+            $this->error('Sorry, Theme '.ucfirst($this->theme['name']).' Folder Already Exist !!!');
             exit();
         }
 
@@ -108,14 +104,11 @@ class ThemeGeneratorCommand extends Command
             'css' => 'assets/css',
             'js'  => 'assets/js',
             'img' => 'assets/images',
-        
-            'layouts' => 'views/layouts',
         ];
         
         $this->themeStubPath = __DIR__ . '/../../stubs';
 
         $themeStubFiles =  [
-            'layout' => 'views/layouts/master.blade.php',
             'page'   => 'views/welcome.blade.php',
             'lang'   => 'lang/en/content.php',
         ];

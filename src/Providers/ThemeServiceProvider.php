@@ -27,6 +27,10 @@ class ThemeServiceProvider extends ServiceProvider
             App::make('files')->link(config('theme.theme_path'), config('theme.symlink_path', public_path('Themes')));
         }*/
         $this->loadViewsFrom(__DIR__ . '/../../views', 'frontend');
+
+        $this->publishes([
+            __DIR__.'/../../config/frontend.php' => config_path('frontend.php'),
+        ], 'tadcms_frontend_config');
     }
 
     /**
@@ -36,10 +40,16 @@ class ThemeServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->mergeConfigFrom(
+            __DIR__ . '/../../config/frontend.php',
+            'frontend'
+        );
+
         $this->registerTheme();
     
         $this->commands([
             \Tadcms\Frontend\Commands\ThemeGeneratorCommand::class,
+            \Tadcms\Frontend\Commands\PublishAssetCommand::class
         ]);
         
         //$this->loadViewsFrom(__DIR__.'/../Views', 'theme');

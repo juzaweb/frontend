@@ -29,6 +29,8 @@ class PublishAssetCommand extends Command
 
         if (!File::isDirectory($publicPath)) {
             File::makeDirectory($publicPath, 0777, true);
+        } else {
+            File::cleanDirectory($publicPath);
         }
 
         File::copyDirectory($assetPath, $publicPath);

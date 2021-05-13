@@ -78,7 +78,7 @@ class ThemeGeneratorCommand extends Command
      */
     public function handle()
     {
-        $this->themePath = base_path('Themes');
+        $this->themePath = base_path('themes');
         $this->theme['name'] = strtolower($this->argument('name'));
 
         $this->init();
@@ -115,7 +115,6 @@ class ThemeGeneratorCommand extends Command
         $this->themeStubPath = __DIR__ . '/../../stubs';
 
         $themeStubFiles =  [
-            'css'    => 'assets/css/app.css',
             'layout' => 'views/layouts/master.blade.php',
             'page'   => 'views/welcome.blade.php',
             'lang'   => 'lang/en/content.php',

@@ -95,11 +95,9 @@ class ThemeGeneratorCommand extends Command
         $createdThemePath = $this->themePath.'/'.$this->theme['name'];
 
         if ($this->files->isDirectory($createdThemePath)) {
-            $this->error('Sorry Boss '.ucfirst($this->theme['name']).' Theme Folder Already Exist !!!');
+            $this->error('Sorry, '.ucfirst($this->theme['name']).' Theme Folder Already Exist !!!');
             exit();
         }
-
-        $this->consoleAsk();
 
         $this->themeFolders = [
             'assets'  => 'assets',
@@ -135,33 +133,6 @@ class ThemeGeneratorCommand extends Command
         $this->createStubs($themeStubFiles, $createdThemePath);
 
         $this->info(ucfirst($this->theme['name']).' Theme Folder Successfully Generated !!!');
-    }
-
-    /**
-     * Console command ask questions.
-     *
-     * @return void
-     */
-    public function consoleAsk()
-    {
-        $this->theme['title'] = $this->ask('What is theme title?');
-
-        $this->theme['description'] = $this->ask('What is theme description?', false);
-        $this->theme['description'] = !$this->theme['description'] ? '' : Str::title($this->theme['description']);
-
-        $this->theme['author'] = $this->ask('What is theme author name?', false);
-        $this->theme['author'] = !$this->theme['author'] ? '' : Str::title($this->theme['author']);
-
-        $this->theme['version'] = $this->ask('What is theme version?', false);
-        $this->theme['version'] = !$this->theme['version'] ? '1.0.0' : $this->theme['version'];
-        $this->theme['parent'] = '';
-        $this->theme['css'] = '';
-        $this->theme['js'] = '';
-
-        if ($this->confirm('Any parent theme?')) {
-            $this->theme['parent'] = $this->ask('What is parent theme name?');
-            $this->theme['parent'] = strtolower($this->theme['parent']);
-        }
     }
 
     /**
@@ -242,13 +213,13 @@ class ThemeGeneratorCommand extends Command
         ];
         $replaceString = [
             $this->theme['name'],
-            $this->theme['title'],
-            $this->theme['description'],
-            $this->theme['author'],
-            $this->theme['parent'],
-            $this->theme['version'],
-            $this->theme['css'],
-            $this->theme['js'],
+            $this->theme['name'],
+            '',
+            '',
+            '',
+            '1.0',
+            '',
+            '',
         ];
 
         $replaceContents = str_replace($mainString, $replaceString, $contents);

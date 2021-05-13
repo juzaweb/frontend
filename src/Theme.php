@@ -131,7 +131,7 @@ class Theme implements ThemeContract
             if (file_exists($themePath . '/screenshot.png')) {
                 $theme['screenshot'] = $this->assets('screenshot.png');
             } else {
-                $theme['screenshot'] = asset('tadcms/images/avatar.png');
+                $theme['screenshot'] = asset('tadcms/assets/images/avatar.png');
             }
             
             return $theme;
